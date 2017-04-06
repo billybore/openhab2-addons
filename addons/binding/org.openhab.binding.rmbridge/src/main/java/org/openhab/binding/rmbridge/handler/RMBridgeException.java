@@ -1,0 +1,25 @@
+package org.openhab.binding.rmbridge.handler;
+
+public class RMBridgeException extends Exception {
+
+    public RMBridgeException() {
+
+    }
+
+    public RMBridgeException(String arg0) {
+        super(arg0);
+    }
+
+    public RMBridgeException(Throwable arg0) {
+        super(arg0);
+    }
+
+    public RMBridgeException(String arg0, Throwable arg1) {
+        super(arg0, arg1);
+    }
+
+    public RMBridgeException(String arg0, Throwable arg1, boolean arg2, boolean arg3) {
+        super(arg0, arg1, arg2, arg3);
+    }
+
+}

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="rmbridge"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:thing="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0"
+        xsi:schemaLocation="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0 http://eclipse.org/smarthome/schemas/thing-description-1.0.0.xsd">
+
+    <thing-type id="rmbridge">
+        <label>RMBridge Binding Thing</label>
+        <description>A binding for Broadlink universal remote via the RMBridge</description>
+
+        <channels>
+            <channel id="channel-switch" typeId="channelSwitch"/>
+        </channels>
+        
+        <config-description>
+            <parameter name="bridge-hostname" type="text" required="true">
+                <label>Bridge Hostname</label>
+                <description>Hostname or IP of the RMBridge device</description>
+            </parameter>
+            
+            <parameter name="bridge-port" type="integer" required="true">
+                <label>Bridge Port</label>
+                <description>Port of the RMBridge device</description>
+                <default>7474</default>
+            </parameter>
+            
+            <parameter name="target-mac" type="text" required="true">
+                <label>Target Broadlink device MAC</label>
+                <description>MAC of the target Broadlink device</description>
+            </parameter>
+            
+            <parameter name="on-hex" type="text" required="true">
+                <label>ON event IR/RF data/hex</label>
+                <description>IR/RF data/hex for ON event</description>
+            </parameter>
+            
+            <parameter name="off-hex" type="text" required="true">
+                <label>OFF event IR/RF data/hex</label>
+                <description>IR/RF data/hex for OFF event</description>
+            </parameter>
+
+        </config-description>
+    </thing-type>
+    
+    <channel-type id="channelSwitch">
+        <item-type>rmbridgeSwitch</item-type>
+        <label>RMBridge Binding Switch Channel</label>
+        <description>A switch channel to trigger remote switch events</description>
+    </channel-type>
+
+</thing:thing-descriptions>
